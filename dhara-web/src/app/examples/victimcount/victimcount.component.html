@@ -1,0 +1,112 @@
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/antoine-barres_1.jpg');">
+  <div class="filter"></div>
+
+  <div class="section section-dark text-center">
+  <div class="container ">
+      <div class="motto text-center">
+         
+          <br />
+
+          <form>
+                            
+                    
+          <div class="row">
+            
+          <div class="col-md-12">
+          <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left">Location</label>
+            <select class="browser-default custom-select" (change)="selectChangeHandeler($event)">
+                              
+                <option selected>Select a location </option>
+                <option value="Kaduwela">Kaduwela</option>
+                <option value="Raggahawatta">Raggahawatta</option>
+                <option value="Hewagama">Hewagama</option>
+                <option value="Pahala Bomirya A">Pahala Bomiriya A</option>
+                <option value="Athurugiriya">Athurugiriya </option>
+                <div class="divider dropdown-divider"></div>
+                <option value="Welivita">Welivita</option>
+                
+              </select>  
+
+              
+                 
+              <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left">Relief Center</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="nc-icon nc-bank"></i>
+                  </span>
+                </div>
+
+                  <input type="text" class="form-control" placeholder="Relief Center" (focus)="focus=true" (blur)="focus=false" >
+              </div>
+              
+              <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left">Upload Image</label>
+              <div class="custom-file mb-3">
+
+                  <input type='file' (change)="onSelectFile($event)" style="font-size: 15px; color: rgb(255, 255, 255);" class="col text-left">
+                  <img [src]="url" height="100"> <br/>
+
+              </div>
+
+              <!--<input type="submit" value="Submit" method="get" >  -->
+               
+              <button type="submit" class="btn btn-outline-neutral btn-round pull-right" style="font-size: 20px; color: rgb(210, 245, 187);" (click)="showDiv.previous = !showDiv.previous"
+              [disabled]="!uploader.getNotUploadedItems().length">
+
+              
+                  Predict Victim Count </button>
+
+                  <button type="reset" class="btn btn-outline-neutral btn-round pull-right" style="font-size: 20px; color: rgb(210, 245, 187);" (click) = "clear()">Reset </button>
+                  <div class="clearfix"></div>
+  
+
+        </div>
+
+          </div>
+
+
+
+
+          <div class="row">
+            <div *ngIf="showDiv.previous" >
+         
+                                <div class="col-md-12"></div>
+                                <div class="col-md-12">
+                                        
+                                           
+                                                <h4 class="card-title">Predicted Victim Count</h4>  
+                                                     
+                                            
+                                            <br/>  
+                              
+                                            
+                                                <form >
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                        <img src="./../../assets/img/test_img1.jpg">
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <button type="submit" class="btn btn-outline-neutral btn-round pull-right" style="font-size: 10px; color: rgb(210, 245, 187);" (click)="reliefPage()">Optimize the Relief </button>
+                                                    <div class="clearfix"></div>
+                                                </form>
+                                             
+                                        
+                                </div>
+                                <div class="col-md-3"></div> 
+                            </div>
+                     
+                  
+            </div>
+   
+
+
+      </form>
+
+
+    
+
+      </div>
+    </div>
+      </div>
+      </div>

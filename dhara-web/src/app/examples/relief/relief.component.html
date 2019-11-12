@@ -1,0 +1,133 @@
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/antoine-barres_1.jpg');">
+  <div class="filter"></div>
+
+  <div class="section section-dark text-center col-md-4">
+  <div class="container ">
+      <div class="motto text-center">
+         
+          <br />
+
+          <form (ngSubmit)= "onSubmit(form3)" #form3="ngForm">
+                            
+                    
+          <div class="row">
+            
+          <div class="col-md-12">
+          <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left">Location</label>
+            <select class="browser-default custom-select" (change)="selectChangeHandeler($event)">
+                              
+                <option selected>Select a location </option>
+                <option value="Kaduwela">Kaduwela</option>
+                <option value="Raggahawatta">Raggahawatta</option>
+                <option value="Hewagama">Hewagama</option>
+                <option value="Pahala Bomirya A">Pahala Bomiriya A</option>
+                <option value="Athurugiriya">Athurugiriya </option>
+                <div class="divider dropdown-divider"></div>
+                <option value="Welivita">Welivita</option>
+                
+              </select>  
+
+              
+                 
+              <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left"></label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="nc-icon nc-bank"></i>
+                  </span>
+                </div>
+
+                  <input type="text" class="form-control" placeholder="Location"  value="{{selectedArea}}" [(ngModel)]="Location"name="filterName" (focus)="focus=true" (blur)="focus=false" >
+              </div>
+
+              
+              
+              <label style="font-size: 20px; color: rgb(255, 255, 255);" class="col text-left"></label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="nc-icon nc-bank"></i>
+                  </span>
+                </div>
+
+                  <input type="text" class="form-control" placeholder="Victim Count" (ngSubmit)='performSearch($event)' [(ngModel)]="filterName"name="filterName1" (focus)="focus=true" (blur)="focus=false" required>
+              </div>
+
+
+              
+             
+
+              <!--<input type="submit" value="Submit" method="get" >  -->
+               
+              <button type="submit" class="btn btn-outline-neutral btn-round pull-right" style="font-size: 20px; color: rgb(210, 245, 187);"(click)='performSearch(filterName)' [disabled]= "form3.invalid">Get relief amount </button>
+                  <button type="reset" class="btn btn-outline-neutral btn-round pull-right" style="font-size: 20px; color: rgb(210, 245, 187);" (click) = "clear()">Reset </button>
+                  <div class="clearfix"></div>
+  
+
+        </div>
+
+          </div>
+
+
+
+
+   
+
+
+      </form>
+
+
+    
+
+      </div>
+    </div>
+      </div>
+
+
+<br/>
+
+
+      
+  <div class="section section-dark text-center col-md-4">
+    <div class="container ">
+        <div class="motto text-center">
+           
+            <br />
+  
+            <div class="card-content table-responsive table-full-width">
+              <table class="table">
+                  <thead class="text-info" >
+                          <!--<thead class="text-info" *ngIf="Dryration">-->
+                      <th>Type</th>
+                      <th>Amount</th>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Dry Ration</td>
+                          <td>{{Drycount}}</td>
+                          <!--<td>{{Dryration.dry}}</td>-->
+                      </tr>
+                      <tr>
+                          <td>Cooked Foods</td>
+                          <td>{{cookedcount}}</td>
+                           <!--<td>{{Dryration.dry}}</td>-->
+                      </tr>
+                     <tr>
+                         <td></td>
+                         <td></td>
+                     </tr>
+                     
+                     
+                          
+            
+                  </tbody>
+              </table>
+          </div>
+  
+  
+      
+  
+        </div>
+      </div>
+        </div>
+      </div>
